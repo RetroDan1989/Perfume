@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark_grayish_blue: hsl(228, 12%, 48%);
+    --Very_dark_blue: hsl(212, 21%, 14%);
+    --Dark_cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Verde_claro:#3e806a;
+
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--Cream);
+    padding: 20px;
+}
+
+.card__section01__img {
+    width: 100%;
+}
+
+.card {
+    margin: 70px auto;
+    max-width: 600px;
+    max-height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card__section01{
+    display: flex;
+    grid-area: section01;
+}
+
+.card__section02 {
+    display: flex;
+    grid-area: section02;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+    "section01 section02"
+    ;
+}
+
+
+.card__section02__text02 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.card__section02__text03 {
+    line-height: 23px;
+}
+
+.card__section02__text01, .card__section02__text03, .card__section02__button {
+    font-weight: 500;
+}
+
+.card__section02__price {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card__section02__price__value01 {
+    font-size: 25px;
+}
+
+.card__section02__price__value02 {
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.card__section02__button {
+    background-color: var(--Verde_claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+
+}
+
+.card__section02__text01, .card__section02__text03, .card__section02__price__value02 {
+    color: var(--Dark_grayish_blue);
+}
+
+.card__section02__text02, .card__section02__price {
+    font-family: 'Fraunces', serif;
+}
+
+.card__section02__price__value01 {
+    color: var(--Verde_claro);
+}
+
+
+.card__section02__button:hover {
+    cursor: pointer;
+    transition: 0.5s ease;
+    transform: scale(1.02);
+    background-color:#2d604f;
+}
+
+.card__section02__button:active {
+    transition: 0.5s ease;
+    transform: scale(0.98);
+}
+
+@media (max-width:420px) {
+
+    body {
+        background-color: var(--Cream);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card__section01__img {
+        content:url(imagenes/image-product-mobile.jpg);
+        width: 100%;
+    }
+
+    .card {
+        min-width: 344px;
+        max-height: 660px;
+        grid-template-areas: 
+        "section01 section01"
+        "section02 section02"
+        ;
+        
+    }
+
+    .card__section02 {
+        gap: 20px;
+    }
+}
